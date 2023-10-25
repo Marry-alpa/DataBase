@@ -1,30 +1,55 @@
-public class Music {
-    public String band;
-    public String[] members;
-    public int albums;
-    public int year;
-    public String description;
-    public String style;
-    private String studio;
+public class Movie {
+    Movie(){}
 
-    public String getStudio() {
-        return studio;
+    Movie(String title, int year, int duration, String director){
+        this.title = title;
+        this.year = year;
+        this.duration = duration;
+        this.director = director;
     }
-
-    public void setStudio(String studio) {
-        this.studio = studio;
-    }
-    public static String getDescription(String band, String members, int albums, int year, String description, String style){
-        return System.out.printf("Band: %s \nMembers: %s \nAlbums: %d \nYear: %d \nDescription: \n%s Style: %s ",
-                band,
-                members,
-                albums,
+    @Override
+    public String toString(){
+        return String.format("Title: %s Year: %d Duration: %d (minutes) Directed by: %s",
+                title,
                 year,
-                description,
-                style).toString();
-
+                duration,
+                director);
     }
-    public static void getTitle(String band){
-        System.out.println(band);
+    private String title;
+    private int year;
+    private int duration;
+    private String director;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
     }
 }
+
